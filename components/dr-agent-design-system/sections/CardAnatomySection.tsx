@@ -154,7 +154,7 @@ export function CardAnatomySection() {
 
       {/* SectionTag */}
       <SpecLabel>SectionTag</SpecLabel>
-      <SpecNote>Inline tag chips for section headers. Two variants: default (neutral slate bg + text) and specialty (violet bg + text). Every SectionTag MUST include an icon from TPMedicalIcon library. Has hover shade. Clicking navigates to that data section in the sidebar.</SpecNote>
+      <SpecNote>Inline tag chips for section headers. Two variants: default (neutral slate bg + text) and specialty (violet bg + text). Every SectionTag MUST include an icon from TPMedicalIcon library. For specialty/violet tags, the icon must use the same violet token as the text. Has hover shade. Clicking navigates to that data section in the sidebar.</SpecNote>
       <CardPreview title="">
         <div className="flex flex-wrap gap-2 rounded-[8px] border border-tp-slate-100 px-3 py-3">
           <SectionTag label="Vitals" icon="Heart Rate" />

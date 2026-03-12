@@ -63,6 +63,7 @@ export function SectionTag({
               name={icon}
               variant="bulk"
               size={11}
+              color={variant === "specialty" ? "var(--tp-violet-600, #7C3AED)" : undefined}
               className={cn(
                 "inline-block align-middle transition-opacity",
                 hovered ? "opacity-100" : "opacity-60",

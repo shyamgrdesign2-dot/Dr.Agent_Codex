@@ -105,6 +105,7 @@ export function CardRulesSection() {
             "Severity: critical=tp-error, high=tp-warning, moderate=yellow, low=tp-slate",
             "InsightBox variants: red (danger), amber (warning), purple (info), teal (success)",
             "Specialty colors: GP=blue, Gynec=pink, Ophthal=teal, Obstetric=violet, Pedia=lightblue",
+            "SectionTag rule: when tag text uses a specialty color (e.g., violet), icon color must match the same token",
             "Badge backgrounds should be subtle (50-level) with darker text (600-700 level)",
           ]}
         />
