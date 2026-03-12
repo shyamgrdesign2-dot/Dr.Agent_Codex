@@ -68,7 +68,7 @@ const RULES: KeywordRule[] = [
   { keywords: ["ask me anything", "ask anything", "pre-consult"], intent: "ambiguous", format: "text" },
 
   // Rail-specific operational queries
-  { keywords: ["overall follow-ups today", "follow-up dues this week", "follow-up dues today", "overdue follow-ups today", "this week follow-ups", "overdue follow-up", "send reminder", "this week's follow-up", "follow-up rate", "follow up rate"], intent: "operational", format: "card" },
+  { keywords: ["follow-up dues this week", "follow-up dues today", "overdue follow-ups today", "this week follow-ups", "overdue follow-up", "send reminder", "this week's follow-up", "follow-up rate", "follow up rate"], intent: "operational", format: "card" },
   { keywords: ["patients with due", "due this week", "due till now", "dues till date", "total bill today", "today's billing", "today's deposit", "today's collection", "overall collection", "past 30 days collection", "generate invoice", "open billing", "open opd billing"], intent: "operational", format: "card" },
   { keywords: ["low stock", "pending prescription", "dispense history", "expiring medicine"], intent: "operational", format: "card" },
   { keywords: ["draft campaign", "delivery stat", "template library", "scheduled message"], intent: "operational", format: "card" },
@@ -192,7 +192,6 @@ export const PILL_INTENT_MAP: Record<string, IntentCategory> = {
   "Overdue follow-ups today": "operational",
   "This week's follow-ups": "operational",
   "This week follow-ups": "operational",
-  "Overall follow-ups today": "operational",
   "Follow-up dues this week": "operational",
   "Follow-up dues today": "operational",
   "Follow-up rate": "operational",

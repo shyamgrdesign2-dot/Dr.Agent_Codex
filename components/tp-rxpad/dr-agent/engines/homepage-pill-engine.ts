@@ -44,39 +44,38 @@ const TAB_OVERRIDES: Record<HomepageTab, CannedPill[]> = {
     ALL_HOMEPAGE_PILLS[1],  // Follow-up dues this week
   ],
   finished: [
-    ALL_HOMEPAGE_PILLS[4],  // Diagnosis breakdown
+    ALL_HOMEPAGE_PILLS[3],  // Diagnosis breakdown
     ALL_HOMEPAGE_PILLS[1],  // Follow-up dues this week
-    ALL_HOMEPAGE_PILLS[3],  // Patient demographics
-    ALL_HOMEPAGE_PILLS[7],  // Chronic conditions
+    ALL_HOMEPAGE_PILLS[2],  // Patient demographics
+    ALL_HOMEPAGE_PILLS[6],  // Chronic conditions
   ],
   cancelled: [
-    ALL_HOMEPAGE_PILLS[8],  // Peak hours
-    ALL_HOMEPAGE_PILLS[5],  // Patient trends
-    ALL_HOMEPAGE_PILLS[6],  // Weekly KPIs
-    ALL_HOMEPAGE_PILLS[4],  // Patient demographics
+    ALL_HOMEPAGE_PILLS[7],  // Peak hours
+    ALL_HOMEPAGE_PILLS[4],  // Patient trends
+    ALL_HOMEPAGE_PILLS[5],  // Weekly KPIs
+    ALL_HOMEPAGE_PILLS[2],  // Patient demographics
   ],
   draft: [
-    ALL_HOMEPAGE_PILLS[10], // Vaccination schedule
-    ALL_HOMEPAGE_PILLS[9],  // Referral summary
-    ALL_HOMEPAGE_PILLS[11], // Vaccination due list
-    ALL_HOMEPAGE_PILLS[12], // ANC schedule
+    ALL_HOMEPAGE_PILLS[9],  // Vaccination schedule
+    ALL_HOMEPAGE_PILLS[8],  // Referral summary
+    ALL_HOMEPAGE_PILLS[10], // Vaccination due list
+    ALL_HOMEPAGE_PILLS[11], // ANC schedule
   ],
   "pending-digitisation": [
-    ALL_HOMEPAGE_PILLS[9],  // Referral summary
+    ALL_HOMEPAGE_PILLS[8],  // Referral summary
     ALL_HOMEPAGE_PILLS[1],  // Follow-up dues this week
-    ALL_HOMEPAGE_PILLS[6],  // Weekly KPIs
-    ALL_HOMEPAGE_PILLS[0],  // Follow-ups due
+    ALL_HOMEPAGE_PILLS[5],  // Weekly KPIs
+    ALL_HOMEPAGE_PILLS[0],  // Follow-up dues today
   ],
 }
 
 // Rail-specific pills — shown when a non-appointments rail item is active
 const RAIL_PILLS: Record<string, CannedPill[]> = {
   "follow-ups": [
-    { id: "rail-overall-today", label: "Overall follow-ups today", priority: 10, layer: 3, tone: "primary" },
-    { id: "rail-due-today", label: "Follow-up dues today", priority: 12, layer: 3, tone: "primary" },
-    { id: "rail-overdue-today", label: "Overdue follow-ups today", priority: 14, layer: 3, tone: "warning" },
-    { id: "rail-thisweek", label: "This week follow-ups", priority: 16, layer: 3, tone: "primary" },
-    { id: "rail-rate", label: "Follow-up rate", priority: 18, layer: 3, tone: "info" },
+    { id: "rail-due-today", label: "Follow-up dues today", priority: 10, layer: 3, tone: "primary" },
+    { id: "rail-overdue-today", label: "Overdue follow-ups today", priority: 12, layer: 3, tone: "warning" },
+    { id: "rail-thisweek", label: "This week follow-ups", priority: 14, layer: 3, tone: "primary" },
+    { id: "rail-rate", label: "Follow-up rate", priority: 16, layer: 3, tone: "info" },
   ],
   "opd-billing": [
     { id: "rail-collection", label: "Today's collection", priority: 10, layer: 3, tone: "primary" },

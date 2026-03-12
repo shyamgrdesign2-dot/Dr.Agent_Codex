@@ -83,20 +83,6 @@ function mockThisWeekFollowUps(): FollowUpListCardData {
   }
 }
 
-function mockOverallFollowUpsToday(): FollowUpListCardData {
-  return {
-    title: "Overall Follow-ups Today",
-    overdueCount: 2,
-    items: [
-      { name: "Shyam GR", scheduledDate: "10:30 AM", reason: "Culture result review", isOverdue: false, patientId: "__patient__" },
-      { name: "Vikram Singh", scheduledDate: "11:15 AM", reason: "HTN medication review", isOverdue: true, patientId: "apt-vikram" },
-      { name: "Lakshmi K", scheduledDate: "4:10 PM", reason: "Hb recheck", isOverdue: true, patientId: "apt-lakshmi" },
-      { name: "Neha Gupta", scheduledDate: "5:30 PM", reason: "Asthma follow-up", isOverdue: false, patientId: "apt-neha" },
-      { name: "Priya Rao", scheduledDate: "6:00 PM", reason: "ANC review", isOverdue: false, patientId: "apt-priya" },
-    ],
-  }
-}
-
 function mockRevenueBar(): RevenueBarCardData {
   return {
     title: "This Week's Billing",
@@ -591,17 +577,6 @@ export function buildHomepageReply(input: string, intent: IntentResult): ReplyRe
   }
 
   // Follow-ups (specific handlers first)
-  if (n.includes("overall follow-ups today") || n.includes("overall follow up today")) {
-    return {
-      text: "Showing the complete follow-up list for today.",
-      rxOutput: { kind: "follow_up_list", data: mockOverallFollowUpsToday() },
-      followUpPills: [
-        { id: "hp-fu-due", label: "Follow-up dues today", priority: 10, layer: 3, tone: "primary" as const },
-        { id: "hp-fu-overdue", label: "Overdue follow-ups today", priority: 12, layer: 3, tone: "warning" as const },
-      ],
-    }
-  }
-
   if (n.includes("follow-up dues this week") || n.includes("follow up dues this week")) {
     return {
       text: "Showing follow-up dues for this week.",

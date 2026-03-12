@@ -12,6 +12,19 @@ export function FollowUpRateCard({ data }: Props) {
   const delta = data.currentRate - data.lastWeekRate
   const deltaTone = delta >= 0 ? "text-tp-success-600" : "text-tp-error-600"
   const trendMax = Math.max(...data.trend.map((p) => p.rate), 1)
+  const trendMin = Math.min(...data.trend.map((p) => p.rate), 0)
+  const chartW = 220
+  const chartH = 64
+  const padX = 8
+  const padY = 8
+  const xStep = data.trend.length > 1 ? (chartW - padX * 2) / (data.trend.length - 1) : 0
+  const gradientId = `fuTrendFill-${data.title.replace(/\s+/g, "-").toLowerCase()}`
+  const yScale = (v: number) => {
+    const range = Math.max(trendMax - trendMin, 1)
+    return padY + (chartH - padY * 2) * (1 - (v - trendMin) / range)
+  }
+  const points = data.trend.map((p, i) => `${padX + i * xStep},${yScale(p.rate)}`).join(" ")
+  const areaPoints = `${padX},${chartH - padY} ${points} ${padX + (data.trend.length - 1) * xStep},${chartH - padY}`
 
   return (
     <CardShell
@@ -39,20 +52,32 @@ export function FollowUpRateCard({ data }: Props) {
       </div>
 
       <div className="mt-[8px] rounded-[8px] border border-tp-slate-100 bg-white px-[8px] py-[7px]">
-        <p className="text-[9px] text-tp-slate-500">4-week trend</p>
-        <div className="mt-[6px] flex items-end gap-[6px]">
-          {data.trend.map((point) => {
-            const h = Math.max(8, Math.round((point.rate / trendMax) * 30))
-            return (
-              <div key={point.label} className="flex flex-col items-center gap-[3px]">
-                <div className="w-[14px] rounded-[3px] bg-tp-blue-500/80" style={{ height: `${h}px` }} />
-                <span className="text-[8px] text-tp-slate-500">{point.label}</span>
-              </div>
-            )
-          })}
-          <span className="ml-auto text-[9px] text-tp-slate-500">
+        <div className="flex items-center justify-between">
+          <p className="text-[9px] text-tp-slate-500">4-week trend</p>
+          <span className="text-[9px] text-tp-slate-500">
             Avg: <span className="font-semibold text-tp-slate-700">{Math.round(data.trend.reduce((a, p) => a + p.rate, 0) / Math.max(1, data.trend.length))}%</span>
           </span>
+        </div>
+        <div className="mt-[6px] rounded-[8px] bg-tp-blue-50/40 px-[6px] py-[6px]">
+          <svg width="100%" viewBox={`0 0 ${chartW} ${chartH}`} className="block">
+            <defs>
+              <linearGradient id={gradientId} x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="rgba(59,130,246,0.30)" />
+                <stop offset="100%" stopColor="rgba(59,130,246,0.04)" />
+              </linearGradient>
+            </defs>
+            <line x1={padX} y1={chartH - padY} x2={chartW - padX} y2={chartH - padY} stroke="var(--tp-slate-200, #E2E8F0)" strokeWidth="1" />
+            <polygon points={areaPoints} fill={`url(#${gradientId})`} />
+            <polyline points={points} fill="none" stroke="var(--tp-blue-500, #3B82F6)" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" />
+            {data.trend.map((p, i) => (
+              <circle key={p.label} cx={padX + i * xStep} cy={yScale(p.rate)} r="2.5" fill="var(--tp-blue-500, #3B82F6)" />
+            ))}
+          </svg>
+          <div className="mt-[4px] flex items-center justify-between px-[2px]">
+            {data.trend.map((p) => (
+              <span key={p.label} className="text-[8px] text-tp-slate-500">{p.label}</span>
+            ))}
+          </div>
         </div>
       </div>
     </CardShell>
