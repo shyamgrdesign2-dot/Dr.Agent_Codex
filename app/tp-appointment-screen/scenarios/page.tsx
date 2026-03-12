@@ -493,25 +493,34 @@ export default function ScenariosPage() {
           </div>
 
           {/* Tab bar */}
-          <div className="mt-3 flex gap-1">
-            {([
-              { id: "scenarios" as PageTab, label: "Demo Scenarios", icon: <User size={14} variant="Bold" /> },
-              { id: "design-system" as PageTab, label: "UI Card Design System", icon: <Brush2 size={14} variant="Bold" /> },
-            ]).map(tab => (
-              <button
-                key={tab.id}
-                type="button"
-                onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[12px] font-medium transition-colors ${
-                  activeTab === tab.id
-                    ? "bg-violet-600 text-white shadow-sm"
-                    : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-                }`}
-              >
-                {tab.icon}
-                {tab.label}
-              </button>
-            ))}
+          <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
+            <div className="flex gap-1">
+              {([
+                { id: "scenarios" as PageTab, label: "Demo Scenarios", icon: <User size={14} variant="Bold" /> },
+                { id: "design-system" as PageTab, label: "UI Card Design System", icon: <Brush2 size={14} variant="Bold" /> },
+              ]).map(tab => (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[12px] font-medium transition-colors ${
+                    activeTab === tab.id
+                      ? "bg-violet-600 text-white shadow-sm"
+                      : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                  }`}
+                >
+                  {tab.icon}
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+            <Link
+              href="/dr-agent-design-system"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-violet-200 bg-violet-50 px-3 py-1.5 text-[12px] font-semibold text-violet-700 transition-colors hover:bg-violet-100"
+            >
+              <Brush2 size={14} variant="Bold" />
+              Open Dr. Agent Design System
+            </Link>
           </div>
         </div>
       </div>
