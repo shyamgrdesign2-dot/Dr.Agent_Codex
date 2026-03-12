@@ -418,7 +418,7 @@ export function DrAgentPanel({ onClose, initialPatientId, mode = "rxpad", active
     })
   }, [selectedPatientId])
 
-  // ── Copy to RxPad ──
+  // ── Fill to RxPad ──
   const handleCopy = useCallback((payload: unknown) => {
     if (payload && typeof payload === "object" && "sourceDateLabel" in payload) {
       requestCopyToRxPad(payload as RxPadCopyPayload)

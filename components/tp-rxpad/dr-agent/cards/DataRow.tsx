@@ -1,7 +1,7 @@
 "use client"
 
 import { cn } from "@/lib/utils"
-import { DocumentCopy } from "iconsax-reactjs"
+import { Copy } from "iconsax-reactjs"
 
 interface DataRowProps {
   label: string
@@ -40,9 +40,9 @@ export function DataRow({ label, unit, value, flag, refRange, isLast, onCopy, co
           type="button"
           onClick={onCopy}
           className="ml-1 flex-shrink-0 opacity-0 transition-opacity group-hover/row:opacity-100 text-tp-slate-600 hover:text-tp-slate-500"
-          title={copyTooltip ?? `Copy ${label}`}
+          title={copyTooltip ?? `Fill ${label}`}
         >
-          <DocumentCopy size={14} variant="Linear" />
+          <Copy size={14} variant="Linear" className="text-tp-blue-500" />
         </button>
       )}
     </div>

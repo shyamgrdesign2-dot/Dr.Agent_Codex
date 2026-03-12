@@ -118,7 +118,7 @@ export function DDXCard({ data, onAccept, onCopyToDiagnosis, onCopyToRxPad, onSe
           .map(([k]) => k)
         onCopyToDiagnosis?.(selectedNames)
       }}
-      copyAllTooltip="Copy selected diagnoses to RxPad"
+      copyAllTooltip="Fill selected diagnoses to RxPad"
       actions={
         selectedCount > 0 ? (
           <>
@@ -149,7 +149,7 @@ export function DDXCard({ data, onAccept, onCopyToDiagnosis, onCopyToRxPad, onSe
       sidebarLink={
         selectedCount > 0 ? (
           <SidebarLink
-            text={`Copy selected to RxPad (${selectedCount})`}
+            text={`Fill selected to RxPad (${selectedCount})`}
             onClick={() => {
               const selectedNames = Object.entries(selected)
                 .filter(([, v]) => v)

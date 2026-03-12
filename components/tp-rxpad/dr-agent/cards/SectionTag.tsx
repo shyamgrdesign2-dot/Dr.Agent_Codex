@@ -14,7 +14,7 @@ interface SectionTagProps {
   className?: string
   /** Tooltip shown on hover over the entire tag, e.g. "Open detailed vitals" */
   tooltip?: string
-  /** Tooltip shown on hover over the copy icon, e.g. "Copy all vitals" */
+  /** Tooltip shown on hover over the fill icon, e.g. "Fill all vitals" */
   copyTooltip?: string
 }
 

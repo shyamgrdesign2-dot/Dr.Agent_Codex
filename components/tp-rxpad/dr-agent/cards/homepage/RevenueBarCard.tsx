@@ -16,13 +16,6 @@ export function RevenueBarCard({ data, onPillTap }: Props) {
   const svgWidth = data.days.length * (barWidth + barGap) - barGap + 20
   const segmentGap = 2
 
-  const copyAll = () => {
-    const lines = data.days.map(d => `${d.label}: Paid ₹${d.paid}, Due ₹${d.due}, Refunded ₹${d.refunded ?? 0}`)
-    navigator.clipboard.writeText(
-      `${data.title}\nTotal: ₹${data.totalRevenue} (Primary: ₹${data.totalPaid}, Secondary: ₹${data.totalDue}, Refunded: ₹${data.totalRefunded})\n${lines.join("\n")}`,
-    )
-  }
-
   // Grid line positions at 25%, 50%, 75%
   const gridLines = [0.25, 0.5, 0.75].map(pct => chartHeight - pct * chartHeight)
 
@@ -30,8 +23,6 @@ export function RevenueBarCard({ data, onPillTap }: Props) {
     <CardShell
       icon={<MoneyRecive size={14} variant="Bulk" />}
       title={data.title}
-      copyAll={copyAll}
-      copyAllTooltip={isDepositMode ? "Copy deposit data" : "Copy billing data"}
       actions={
         <>
           {!isDepositMode ? (

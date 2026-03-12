@@ -513,6 +513,13 @@ export const PATIENT_DOCUMENTS: Record<string, PatientDocument[]> = {
     { id: "doc-7", fileName: "Thyroid_Panel_Oct2025.pdf", docType: "pathology", uploadedAt: "18 Oct'25", uploadedBy: "Metropolis Lab", pageCount: 2, size: "280 KB" },
     { id: "doc-8", fileName: "MRI_Brain_Sep2025.pdf", docType: "radiology", uploadedAt: "05 Sep'25", uploadedBy: "Dr. Reddy", pageCount: 6, size: "3.2 MB" },
   ],
+  "apt-neha": [
+    { id: "doc-n1", fileName: "Lab_Results_Mar2026.pdf", docType: "pathology", uploadedAt: "09 Mar'26", uploadedBy: "Metropolis Lab", pageCount: 2, size: "420 KB" },
+    { id: "doc-n2", fileName: "Chest_Xray_Feb2026.pdf", docType: "radiology", uploadedAt: "27 Feb'26", uploadedBy: "City Imaging", pageCount: 1, size: "1.4 MB" },
+    { id: "doc-n3", fileName: "Pathology_Panel_Feb2026.pdf", docType: "pathology", uploadedAt: "25 Feb'26", uploadedBy: "Apollo Diagnostics", pageCount: 3, size: "560 KB" },
+    { id: "doc-n4", fileName: "Previous_Rx_Feb2026.pdf", docType: "prescription", uploadedAt: "18 Feb'26", uploadedBy: "Dr. Meera", pageCount: 1, size: "190 KB" },
+    { id: "doc-n5", fileName: "Insurance_PreAuth_Feb2026.pdf", docType: "other", uploadedAt: "16 Feb'26", uploadedBy: "Patient", pageCount: 2, size: "300 KB" },
+  ],
   "apt-lakshmi": [
     { id: "doc-l1", fileName: "Pap_Smear_Report_Feb2026.pdf", docType: "pathology", uploadedAt: "12 Feb'26", uploadedBy: "Path Lab", pageCount: 2, size: "410 KB" },
     { id: "doc-l2", fileName: "Pelvic_Ultrasound_Jan2026.pdf", docType: "radiology", uploadedAt: "25 Jan'26", uploadedBy: "Dr. Anitha", pageCount: 3, size: "1.8 MB" },

@@ -54,7 +54,7 @@ export function CardAnatomySection() {
         <pre>{`┌─ Card (rounded-14, gradient border) ─────────────────────────┐
 │  HEADER (blue-50 gradient top, border-bottom slate-50)       │
 │  [Icon 26×26] [Title 12px] [Date 10px] [📋] → [Badge] [▼▲] │
-│  ↑ Copy icon goes AGAINST the heading, not as a CTA          │
+│  ↑ Fill icon goes AGAINST the heading, not as a CTA          │
 ├──────────────────────────────────────────────────────────────┤
 │  CONTENT AREA (px-3 py-[10px])                               │
 │  Supports any combination of:                                │
@@ -87,7 +87,7 @@ export function CardAnatomySection() {
           date="05 Mar'26"
           badge={{ label: "3 flagged", color: "#DC2626", bg: "#FEF2F2" }}
           copyAll={() => {}}
-          copyAllTooltip="Copy to RxPad"
+          copyAllTooltip="Fill to RxPad"
           actions={
             <>
               <ChatPillButton label="Compare prev" />
@@ -194,7 +194,7 @@ export function CardAnatomySection() {
 
       {/* Footer CTAs */}
       <SpecLabel>Footer CTAs (Max 2, Divided)</SpecLabel>
-      <SpecNote>Maximum 2 CTAs in the footer, separated by a gradient vertical divider. Left CTA + divider + right CTA. Use TP secondary/tertiary button style: rounded-10, no background, text-only. Copy icon goes in the header, NOT as a footer CTA. Arrow rule: 1 CTA → show navigation arrow (→) beside the CTA, 2 CTAs → no arrows.</SpecNote>
+      <SpecNote>Maximum 2 CTAs in the footer, separated by a gradient vertical divider. Left CTA + divider + right CTA. Use TP secondary/tertiary button style: rounded-10, no background, text-only. Fill icon goes in the header, NOT as a footer CTA. Arrow rule: 1 CTA → show navigation arrow (→) beside the CTA, 2 CTAs → no arrows.</SpecNote>
 
       {/* 2-CTA footer example */}
       <p className="mb-2 text-[10px] font-medium text-tp-slate-600 pl-5">2 CTAs — no navigation arrow:</p>

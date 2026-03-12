@@ -5,9 +5,11 @@ import { cn } from "@/lib/utils"
 import type { RxAgentChatMessage } from "../types"
 import { CardRenderer } from "../cards/CardRenderer"
 import { FeedbackRow } from "../cards/FeedbackRow"
+import { CopyIcon } from "../cards/CopyIcon"
+import { ActionableTooltip } from "../cards/ActionableTooltip"
 import { AiBrandSparkIcon } from "@/components/doctor-agent/ai-brand"
 import { AiGradientBg } from "../shared/AiGradientBg"
-import { DocumentCopy, Edit2 } from "iconsax-reactjs"
+import { Edit2 } from "iconsax-reactjs"
 import { DocumentAttachmentBubble } from "./DocumentAttachmentBubble"
 
 /** Convert light markdown (bold + links) into rich text. */
@@ -116,14 +118,12 @@ export function ChatBubble({
           )}
           {/* Hover action icons */}
           <div className="flex items-center gap-[2px] opacity-0 group-hover/msg:opacity-100 transition-opacity">
-            <button
-              type="button"
-              onClick={() => navigator.clipboard?.writeText(message.text)}
-              className="flex h-[16px] w-[16px] items-center justify-center text-tp-slate-300 transition-colors hover:text-tp-slate-500"
-              title="Copy"
+            <ActionableTooltip
+              label="Fill to RxPad"
+              onAction={() => navigator.clipboard?.writeText(message.text)}
             >
-              <DocumentCopy size={14} variant="Linear" />
-            </button>
+              <CopyIcon onClick={() => navigator.clipboard?.writeText(message.text)} />
+            </ActionableTooltip>
             <button
               type="button"
               onClick={() => {}}

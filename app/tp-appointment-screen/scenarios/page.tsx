@@ -612,7 +612,7 @@ export default function ScenariosPage() {
                   { step: "6", action: "Open a patient", detail: "Click 'TypeRx' on any patient row — RxPad opens with prescription form on left, Dr. Agent on right" },
                   { step: "7", action: "Patient Intake Card", detail: "Dr. Agent auto-shows the Patient Reported card with symptoms, severity, chronic conditions, medications" },
                   { step: "8", action: "AI-Powered Cards", detail: "Click 'Suggest DDX' → differential diagnoses. Click 'Initial investigations' → lab tests to order" },
-                  { step: "9", action: "Copy to RxPad", detail: "Click copy icon in card header → data copies to RxPad section. Use section-specific copy for targeted copying" },
+                  { step: "9", action: "Fill to RxPad", detail: "Click fill icon in card header → data fills into the RxPad section. Use section-specific fill for targeted placement" },
                   { step: "10", action: "Voice Dictation", detail: "Click voice icon → recording UI with animated wave bars → dictate consultation → AI structures into Rx sections → Accept all" },
                 ],
               },

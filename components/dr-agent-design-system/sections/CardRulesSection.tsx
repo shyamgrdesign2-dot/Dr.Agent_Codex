@@ -61,7 +61,7 @@ export function CardRulesSection() {
             "Compose from primitives: DataRow, CheckboxRow, RadioRow, SectionTag, InsightBox",
             "For custom layouts: maintain 12px text, tp-slate-700 color, and existing spacing",
             "Add InsightBox at end of content for clinical context (choose appropriate variant)",
-            "Copy payloads must conform to RxPadCopyPayload interface for RxPad sync",
+            "Fill payloads must conform to RxPadCopyPayload interface for RxPad sync",
           ]}
         />
 
@@ -70,7 +70,11 @@ export function CardRulesSection() {
           variant="rule"
           items={[
             "ChatPillButton (canned messages): AI-driven follow-up suggestions — always ABOVE the footer",
-            "Copy functionality: use the copy icon (DocumentCopy) against the heading in the header — NOT as a CTA button",
+            "Fill functionality: use the copy icon (Copy) against the heading in the header — NOT as a CTA button",
+            "Fill visibility rule: show fill controls only for newly generated data; hide for already-fetched historical data",
+            "Historical exception: Last Visit may expose Fill to RxPad for quick carry-forward",
+            "Destination label must be explicit: Fill to RxPad / Fill to Vitals / Fill to Medical History / Fill to Obstetric History, etc.",
+            "RxPad destination is restricted to Symptoms, Examination, Diagnosis, Medication, Advice, Lab Investigation, Surgery, Additional Notes, and Follow-up",
             "Footer CTAs: Max 2 CTAs with gradient vertical divider (transparent→#CBD5E1→transparent, 1px × 20px)",
             "Left CTA: typically 'View full report' — right CTA: contextual (e.g. 'Explore details', 'Track trends')",
             "Use TP secondary/tertiary style: rounded-10, no background, text-only, flex-1 centered",

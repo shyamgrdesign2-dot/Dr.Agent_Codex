@@ -42,7 +42,7 @@ export function VoiceStructuredRxCard({ data, onCopy }: VoiceStructuredRxCardPro
       title="Structured Transcript"
       badge={{ label: "Just now", color: "#64748B", bg: "#F1F5F9" }}
       copyAll={() => onCopy?.(data.copyAllPayload)}
-      copyAllTooltip="Copy structured transcript to RxPad"
+      copyAllTooltip="Fill structured transcript to RxPad"
       collapsible
       defaultCollapsed={false}
     >
@@ -78,7 +78,7 @@ export function VoiceStructuredRxCard({ data, onCopy }: VoiceStructuredRxCardPro
               </span>
               <span className="opacity-0 group-hover/section-header:opacity-100 transition-opacity">
                 <ActionableTooltip
-                  label={`Copy ${section.title.toLowerCase()} to RxPad`}
+                  label={`Fill ${section.title.toLowerCase()} to RxPad`}
                   onAction={() => handleCopySection(section.sectionId, section.items)}
                 >
                   <CopyIcon size={14} onClick={() => handleCopySection(section.sectionId, section.items)} />
@@ -109,7 +109,7 @@ export function VoiceStructuredRxCard({ data, onCopy }: VoiceStructuredRxCardPro
                         <span className="text-[10px] text-tp-success-500 font-medium">Copied</span>
                       ) : (
                         <ActionableTooltip
-                          label={`Copy to RxPad`}
+                          label={`Fill to RxPad`}
                           onAction={() => handleCopyItem(item, itemKey)}
                         >
                           <CopyIcon

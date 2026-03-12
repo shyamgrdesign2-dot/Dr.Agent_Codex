@@ -80,7 +80,7 @@ export function AgentHeader({
     <div className={cn("relative z-20", className)}>
       {/* Header — AI gradient bg with blur */}
       <div
-        className="relative overflow-hidden flex items-center justify-between px-[14px]"
+        className="relative overflow-visible flex items-center justify-between px-[14px]"
         style={{
           height: 52,
           background: "linear-gradient(135deg, rgba(213,101,234,0.12) 0%, rgba(103,58,172,0.10) 40%, rgba(26,25,148,0.12) 100%)",
@@ -147,7 +147,7 @@ export function AgentHeader({
             {dropdownOpen && (
               <div
                 className={cn(
-                  "absolute left-0 top-full z-50 mt-[4px]",
+                  "absolute left-0 top-full z-[120] mt-[4px]",
                   "min-w-[110px] rounded-[8px] border border-tp-slate-100/80",
                   "bg-white/90 backdrop-blur-md py-[4px] shadow-[0_4px_12px_rgba(0,0,0,0.05)]",
                 )}

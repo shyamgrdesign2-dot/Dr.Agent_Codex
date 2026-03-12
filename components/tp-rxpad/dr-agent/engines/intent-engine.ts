@@ -49,7 +49,7 @@ const RULES: KeywordRule[] = [
   { keywords: ["investigation", "test", "order", "screening", "workup"], intent: "clinical_decision", format: "card" },
 
   // Action
-  { keywords: ["copy", "add", "fill", "generate advice", "draft"], intent: "action", format: "hybrid" },
+  { keywords: ["copy", "add", "fill", "draft"], intent: "action", format: "hybrid" },
   { keywords: ["translate", "hindi", "telugu", "kannada", "tamil", "marathi"], intent: "action", format: "card" },
   { keywords: ["follow-up", "follow up", "f/u", "next visit", "schedule"], intent: "action", format: "card" },
 
@@ -127,7 +127,6 @@ export const PILL_INTENT_MAP: Record<string, IntentCategory> = {
   "Investigations": "clinical_decision",
   "Advice": "action",
   "F/U": "action",
-  "Generate advice": "action",
   "Translate": "action",
   "Follow-up": "action",
   "Completeness check": "operational",

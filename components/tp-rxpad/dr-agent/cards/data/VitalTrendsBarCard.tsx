@@ -234,13 +234,6 @@ export function VitalTrendsBarCard({ data, onPillTap }: VitalTrendsBarCardProps)
       tpIconName="Heart Rate"
       title={data.title}
       date={`${totalVisits} visits`}
-      copyAll={() => {
-        const text = data.series.map(s =>
-          `${s.label} (${s.unit}): ${s.dates.map((d, i) => `${d}: ${s.values[i]}`).join(", ")}`
-        ).join("\n")
-        navigator.clipboard?.writeText(text)
-      }}
-      copyAllTooltip="Copy vitals data to clipboard"
       actions={
         <ChatPillButton label="All vitals" onClick={() => onPillTap?.("All vitals")} />
       }

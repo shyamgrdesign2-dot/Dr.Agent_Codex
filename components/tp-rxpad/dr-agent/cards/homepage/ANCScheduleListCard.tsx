@@ -10,13 +10,6 @@ export function ANCScheduleListCard({ data, onPillTap }: Props) {
   const [disabledItems, setDisabledItems] = useState<Set<number>>(new Set())
   const [allDisabled, setAllDisabled] = useState(false)
 
-  const copyAll = () => {
-    const text = data.items.map(i =>
-      `${i.patientName} (${i.gestationalAge}) — ${i.ancItem} — Due ${i.dueWeek}${i.isOverdue ? " (Overdue)" : ""}`
-    ).join("\n")
-    navigator.clipboard.writeText(text)
-  }
-
   const handleSendAll = () => {
     setAllDisabled(true)
     setDisabledItems(new Set(data.items.map((_, i) => i)))
@@ -33,8 +26,6 @@ export function ANCScheduleListCard({ data, onPillTap }: Props) {
       icon={<Heart size={14} variant="Bulk" color="var(--tp-blue-500, #3B82F6)" />}
       title={data.title}
       badge={data.overdueCount > 0 ? { label: `${data.overdueCount} overdue`, color: "#DC2626", bg: "#FEE2E2" } : undefined}
-      copyAll={copyAll}
-      copyAllTooltip="Copy ANC schedule"
       sidebarLink={
         data.items.length > 0 && !allDisabled ? (
           <button

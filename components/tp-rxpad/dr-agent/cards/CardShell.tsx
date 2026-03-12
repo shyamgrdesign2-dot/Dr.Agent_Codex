@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils"
 import { CopyIcon } from "./CopyIcon"
 import { ActionableTooltip } from "./ActionableTooltip"
 import { TPMedicalIcon } from "@/components/tp-ui"
-import { DocumentCopy, ArrowDown2, ArrowUp2 } from "iconsax-reactjs"
+import { Copy, ArrowDown2, ArrowUp2 } from "iconsax-reactjs"
 
 interface CardShellProps {
   icon: React.ReactNode
@@ -88,11 +88,11 @@ export function CardShell({
             {copyAllTooltip ? (
               <ActionableTooltip label={copyAllTooltip} onAction={() => copyAll()}>
                 <span
-                  className={cn("cursor-pointer transition-colors", copyHovered ? "text-tp-slate-500" : "text-tp-slate-600")}
+                  className={cn("cursor-pointer transition-colors", copyHovered ? "text-tp-blue-600" : "text-tp-blue-500")}
                   onMouseEnter={() => setCopyHovered(true)}
                   onMouseLeave={() => setCopyHovered(false)}
                 >
-                  <DocumentCopy size={14} variant={copyHovered ? "Bulk" : "Linear"} />
+                  <Copy size={14} variant={copyHovered ? "Bulk" : "Linear"} />
                 </span>
               </ActionableTooltip>
             ) : (

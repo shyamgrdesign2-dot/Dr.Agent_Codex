@@ -338,13 +338,6 @@ export function LabTrendsCard({ data, onPillTap }: LabTrendsCardProps) {
       tpIconName="Lab"
       title={data.title}
       date={`${totalVisits} visits`}
-      copyAll={() => {
-        const text = data.series.map(s =>
-          `${s.label} (${s.unit}): ${s.dates.map((d, i) => `${d}: ${s.values[i]}`).join(", ")}`
-        ).join("\n")
-        navigator.clipboard?.writeText(text)
-      }}
-      copyAllTooltip="Copy lab trend to clipboard"
       actions={
         <>
           <ChatPillButton label="Compare labs" onClick={() => onPillTap?.("Compare labs")} />
