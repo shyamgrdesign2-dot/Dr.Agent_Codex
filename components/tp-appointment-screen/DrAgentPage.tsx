@@ -939,6 +939,10 @@ export function DrAgentPage() {
             items={navItems}
             activeId={activeRailItem}
             onSelect={(id) => {
+              if (id === "follow-ups") {
+                router.push("/tp-follow-ups")
+                return
+              }
               setActiveRailItem(id)
             }}
             variant="primary"
@@ -971,7 +975,13 @@ export function DrAgentPage() {
                     <button
                       key={item.id}
                       type="button"
-                      onClick={() => setActiveRailItem(item.id)}
+                      onClick={() => {
+                        if (item.id === "follow-ups") {
+                          router.push("/tp-follow-ups")
+                          return
+                        }
+                        setActiveRailItem(item.id)
+                      }}
                       className={cn(
                         "whitespace-nowrap rounded-full border px-3 py-1.5 text-xs font-medium transition-colors",
                         isActive

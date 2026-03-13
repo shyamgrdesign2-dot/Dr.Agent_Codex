@@ -846,7 +846,7 @@ export function FollowUpsPage() {
                         className="whitespace-nowrap !bg-[rgba(255,255,255,0.13)] backdrop-blur-sm"
                         leftIcon={<Plus size={20} strokeWidth={1.5} />}
                       >
-                        Schedule Follow-up
+                        Create Appointment
                       </Button>
                       <Button
                         variant="solid"
@@ -856,7 +856,7 @@ export function FollowUpsPage() {
                         className="whitespace-nowrap"
                         leftIcon={<CalendarAdd size={20} variant="Linear" strokeWidth={1.5} />}
                       >
-                        Send Reminders
+                        Book Follow-up
                       </Button>
                     </>
                   }
